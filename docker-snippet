@@ -1,0 +1,17 @@
+[merin@centos7 cicd-demo]$ cat *
+version: '3'
+services: 
+    sonarqube:
+        image: 'sonarqube'
+        restart: 'always'
+        ports: 
+            - "9000:9000"
+    jenkins-server:
+        build: .
+        ports: 
+            - "8080:8080"
+FROM jenkins/jenkins:lts
+USER root
+RUN apt-get update && apt-get install -y maven
+USER jenkins
+[merin@centos7 cicd-demo]$ 
