@@ -7,6 +7,8 @@ import java.util.List;
 public class Application {
    
     public void greet() {
+	int a;
+	int x;
 	List<String> greetings = new ArrayList<>();
 	greetings.add("Hello");
 	
